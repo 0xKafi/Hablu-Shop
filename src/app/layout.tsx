@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={outfit.className}>
-        <div className="flex flex-col min-h-screen w-11/12 max-w-screen-xl mx-auto">
+        <div className="flex flex-col min-h-screen">
           <Navbar></Navbar>
-          <main className="flex-grow">
+          <main className="flex-grow w-11/12 max-w-screen-xl mx-auto">
             {children}
           </main>
           <Footer></Footer>
