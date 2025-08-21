@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import {Outfit} from "next/font/google";
 import "./globals.css";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { ThemeProvider } from "@/components/theme-provider"
+import Providers from "@/components/Provider"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -23,13 +25,22 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={outfit.className}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <div className="flex flex-col min-h-screen">
+          <Providers>
           <Navbar></Navbar>
           <main className="flex-grow w-11/12 max-w-screen-xl mx-auto">
             {children}
           </main>
+          </Providers>
           <Footer></Footer>
         </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,0 +1,50 @@
+"use client"
+import { ModeToggle } from '@/components/theme-toggle';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import React from 'react';
+import { signOut, useSession } from "next-auth/react"
+
+const Navbar = () => {
+    const { data: session } = useSession()
+
+    return (
+        <header className='py-4 border-b-1 sticky z-50'>
+            <nav className='flex justify-between items-center w-11/12 max-w-screen-xl mx-auto'>
+                {/* left side */}
+                <div className='flex space-x-10 items-center'>
+                    {/* Logo */}
+                    <h2 className='font-bold text-2xl text-primary'>
+                        <span className='bg-primary text-secondary px-2 rounded-sm'>H</span>
+                        ablu Shop
+                    </h2>
+                    <ul className='flex space-x-5'>
+                        <li> <Link href='/'>Home</Link></li>
+                        <li> <Link href='/products'>Products</Link></li>
+                    </ul>
+                </div>
+
+                {/* right side */}
+                <div className='flex space-x-5'>
+                {
+                    session ? (
+                        <div className="flex items-center space-x-3">
+                        <p className="text-sm">{session.user?.name}</p>
+                        <Button
+                            onClick={() => signOut({ callbackUrl: "/login" })}>
+                            Sign out
+                        </Button>
+                        </div>
+                    ) : (
+                        <Button asChild>
+                        <Link href="/login">Login</Link>
+                        </Button>
+                    )}
+                    <ModeToggle></ModeToggle>
+                </div>
+            </nav>
+        </header>
+    );
+};
+
+export default Navbar;
