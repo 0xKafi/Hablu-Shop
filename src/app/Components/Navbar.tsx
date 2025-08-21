@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { CiSearch } from "react-icons/ci";
-import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
     return (
@@ -16,8 +15,7 @@ const Navbar = () => {
                     </h2>
                     <ul className='flex space-x-5'>
                         <li> <Link href='/'>Home</Link></li>
-                        <li> <Link href='/'>Categories</Link></li>
-                        <li> <Link href='/'>Shop</Link></li>
+                        <li> <Link href='/products'>Products</Link></li>
                     </ul>
                 </div>
 
