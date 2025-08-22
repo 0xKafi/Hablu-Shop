@@ -30,12 +30,13 @@ const Page = async({ params }: PageProps) => {
 
   return (
     <div className="mt-10 lg:h-120 rounded-lg py-10 lg:px-20 mb-24">
-      <div className="flex flex-col lg:flex-row space-x-20 ">
-          <div className="relative h-100 w-99 mb-10 lg:mb-0 border rounded-lg shadow hover:shadow-md"> 
+      <div className="flex flex-col lg:flex-row lg:space-x-20 justify-center items-center">
+          <div className="flex items-center justify-center mb-10 lg:mb-0 border rounded-lg shadow hover:shadow-md"> 
           <Image
               src={product.thumbnail}
               alt={product.name}
-              fill
+                width={320} 
+                height={320} 
               className="object-cover rounded-lg"/>
           </div>
           <div className="lg:w-1/2">
