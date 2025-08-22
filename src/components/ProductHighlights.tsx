@@ -16,7 +16,7 @@ interface Product {
 }
 
 const ProductHighlights = async() => {
-    const data = await fetch('http://localhost:3000/highlights')
+    const data = await fetch('https://hablu-shop-backend.vercel.app/highlights')
     const products: Product[] = await data.json()
     return (
         <section className='my-24'>

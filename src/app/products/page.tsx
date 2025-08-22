@@ -14,7 +14,7 @@ const page = async () => {
         reviews: number;
     }
 
-    const data = await fetch('http://localhost:3000/products')
+    const data = await fetch('https://hablu-shop-backend.vercel.app/products')
     const products: Product[] = await data.json()
     return (
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mx-auto mb-24'>

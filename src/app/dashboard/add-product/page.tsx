@@ -1,6 +1,8 @@
 import { getServerSession } from "next-auth/next"
 import { redirect } from "next/navigation"
 import { authOptions } from "@/lib/auth" 
+import Form from "@/components/Form"
+
 
 export default async function AddProductPage() {
   const session = await getServerSession(authOptions)
@@ -10,8 +12,8 @@ export default async function AddProductPage() {
   }
 
   return (
-    <div className="flex items-center space-x-3">
-      <p className="text-sm">Hello, {session.user?.name}</p>
+    <div className="flex justify-center mb-24 mt-10">
+      <Form></Form>
     </div>
   )
 }

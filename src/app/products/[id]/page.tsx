@@ -25,7 +25,7 @@ interface Product {
 const Page = async({ params }: PageProps) => {
   const { id } = params;
 
-    const data = await fetch(`http://localhost:3000/products/${id}`)
+    const data = await fetch(`https://hablu-shop-backend.vercel.app/products/${id}`)
     const product: Product = await data.json()
 
   return (
