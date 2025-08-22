@@ -21,6 +21,7 @@ const Navbar = () => {
                     <ul className='flex space-x-5'>
                         <li> <Link href='/'>Home</Link></li>
                         <li> <Link href='/products'>Products</Link></li>
+                        <li> <Link href='/dashboard/add-product'>Add Product</Link></li>
                     </ul>
                 </div>
 
