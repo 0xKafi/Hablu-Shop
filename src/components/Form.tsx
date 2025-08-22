@@ -10,6 +10,13 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const Form = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -51,7 +58,7 @@ const Form = () => {
 
     return (
         <div>
-        <Card className="w-sm">
+        <Card className="w-xs sm:w-sm md:w-md">
           <CardHeader>
             <CardTitle className="text-center">Add Product</CardTitle>
             <CardDescription className="text-center">
@@ -73,7 +80,16 @@ const Form = () => {
 
                 <div className="grid gap-2">
                   <Label>Frequency</Label>
-                  <Input name="frequency" type="text" defaultValue="monthly" placeholder="Frequency" required />
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Frequency" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="weekly">Weekly</SelectItem>
+                      <SelectItem value="monthly">Monthly</SelectItem>
+                      <SelectItem value="yearly">Yearly</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div className="grid gap-2">

@@ -17,7 +17,8 @@ const page = async () => {
     const data = await fetch('https://hablu-shop-backend.vercel.app/products')
     const products: Product[] = await data.json()
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mx-auto mb-24'>
+        <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+ mt-10 mb-24'>
             {
                 products.map(product => <Card key={product._id} product={product}></Card>)
             }

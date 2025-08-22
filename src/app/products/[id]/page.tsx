@@ -29,16 +29,16 @@ const Page = async({ params }: PageProps) => {
     const product: Product = await data.json()
 
   return (
-    <div className="mt-10 h-120 rounded-lg p-10 px-20 mb-24">
-      <div className="flex space-x-20 ">
-          <div className="relative w-100 h-100 border rounded-lg shadow hover:shadow-md"> 
+    <div className="mt-10 lg:h-120 rounded-lg py-10 lg:px-20 mb-24">
+      <div className="flex flex-col lg:flex-row space-x-20 ">
+          <div className="relative h-100 w-99 mb-10 lg:mb-0 border rounded-lg shadow hover:shadow-md"> 
           <Image
               src={product.thumbnail}
               alt={product.name}
               fill
               className="object-cover rounded-lg"/>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
            <div className="space-y-6">
               <div className="space-y-4">
                 <div className="flex gap-2">

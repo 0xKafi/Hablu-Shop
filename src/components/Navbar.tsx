@@ -16,9 +16,9 @@ const Navbar = () => {
                     {/* Logo */}
                     <h2 className='font-bold text-2xl text-primary'>
                         <span className='bg-primary text-secondary px-2 rounded-sm'>H</span>
-                        ablu Shop
+                        <p className='hidden'>ablu Shop</p>
                     </h2>
-                    <ul className='flex space-x-5'>
+                    <ul className='lg:flex space-x-5 hidden'>
                         <li> <Link href='/'>Home</Link></li>
                         <li> <Link href='/products'>Products</Link></li>
                         <li> <Link href='/dashboard/add-product'>Add Product</Link></li>
