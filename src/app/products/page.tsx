@@ -17,7 +17,7 @@ const page = async () => {
     const data = await fetch('http://localhost:3000/products')
     const products: Product[] = await data.json()
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mx-auto'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mx-auto mb-24'>
             {
                 products.map(product => <Card key={product._id} product={product}></Card>)
             }

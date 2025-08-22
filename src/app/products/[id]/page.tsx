@@ -29,7 +29,7 @@ const Page = async({ params }: PageProps) => {
     const product: Product = await data.json()
 
   return (
-    <div className="mt-10 h-120 rounded-lg p-10 px-20">
+    <div className="mt-10 h-120 rounded-lg p-10 px-20 mb-24">
       <div className="flex space-x-20 ">
           <div className="relative w-100 h-100 border rounded-lg shadow hover:shadow-md"> 
           <Image
